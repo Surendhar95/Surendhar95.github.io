@@ -59,9 +59,9 @@
       sendEvent('ready');
     });
 
-    // player.api('message', function(data) {
-    //   sendEvent(message, data);
-    // });
+    player.api('message', function(data) {
+      sendEvent('message', data);
+    });
     function sendEvent(evt, data) {
       console.log('Sending event', evt, data);
       // Passes events through the bridge
