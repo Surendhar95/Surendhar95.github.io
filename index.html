@@ -2,7 +2,7 @@
   <title></title>
   <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
 </head>
-<body style="height: 100%; width: 100%;">
+<body style="height: 100%; width: 100%; margin: 0 !important">
 
 </body>
 <script>
@@ -32,6 +32,7 @@
       'https://player.vimeo.com/video/' + vid + '?api=1&player_id=' + PLAYER_ID;
     iframe.width = '100%';
     iframe.height = '100%';
+    iframe.allow="autoplay; fullscreen";
     iframe.frameBorder = '0';
     iframe.webkitallowfullscreen = true;
     iframe.allowfullscreen = true;
@@ -59,9 +60,9 @@
       sendEvent('ready');
     });
 
-    player.api('message', function(data) {
-      sendEvent('message', data);
-    });
+    // player.api('message', function(data) {
+    //   sendEvent(message, data);
+    // });
     function sendEvent(evt, data) {
       console.log('Sending event', evt, data);
       // Passes events through the bridge
