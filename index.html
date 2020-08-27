@@ -22,7 +22,7 @@
     function webViewBridge() {
       var vid = getParameterByName('vid');
       if (!vid) {
-        window.ReactNativeWebView.postMessage('No `vid` parameter found, not loading Vimeo iframe');
+        window.postMessage('No `vid` parameter found, not loading Vimeo iframe');
         return;
       }
       // Generate iframe based on `vid` parameter
@@ -69,7 +69,7 @@
           name: evt,
           data: data
         };
-        window.ReactNativeWebView.postMessage(JSON.stringify(payload));
+        window.postMessage(JSON.stringify(payload));
       }
     }
 
